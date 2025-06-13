@@ -46,25 +46,25 @@ export const removeFood = async (req, res) => {
     }
 };
 
-// Get single food by ID
-export const getFoodById = async (req, res) => {
-    try {
-        const food = await Food.findById(req.params.id);
-        if (!food) return res.status(404).json({ message: "Food not found" });
-        res.json(food);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-};
+// // Get single food by ID
+// export const getFoodById = async (req, res) => {
+//     try {
+//         const food = await Food.findById(req.params.id);
+//         if (!food) return res.status(404).json({ message: "Food not found" });
+//         res.json(food);
+//     } catch (err) {
+//         res.status(500).json({ message: err.message });
+//     }
+// };
 
-// Update food
-export const updateFood = async (req, res) => {
-    try {
-        const updatedFood = await Food.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (!updatedFood) return res.status(404).json({ message: "Food not found" });
-        res.json(updatedFood);
-    } catch (err) {
-        res.status(400).json({ message: err.message });
-    }
-};
+// // Update food
+// export const updateFood = async (req, res) => {
+//     try {
+//         const updatedFood = await Food.findByIdAndUpdate(req.params.id, req.body, { new: true });
+//         if (!updatedFood) return res.status(404).json({ message: "Food not found" });
+//         res.json(updatedFood);
+//     } catch (err) {
+//         res.status(400).json({ message: err.message });
+//     }
+// };
 
