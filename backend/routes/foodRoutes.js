@@ -1,9 +1,7 @@
 import express from "express";
 import {
     listFood,
-    getFoodById,
     addFood,
-    updateFood,
     removeFood
 } from "../controllers/foodController.js";
 import multer from "multer";
@@ -25,7 +23,7 @@ router.get("/list", listFood);
 router.post("/remove/", removeFood);
 
 
-router.get("/:id", getFoodById);
-router.put("/:id", updateFood);
+// router.get("/:id", getFoodById);
+// router.put("/:id", updateFood);
 
 export default router;
