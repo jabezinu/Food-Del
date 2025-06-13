@@ -1,13 +1,13 @@
 import express from 'express';
 import cors from 'cors';
 import {connectDB} from './config/db.js';
-import dotenv from 'dotenv';
+import 'dotenv/config';
 import foodRoutes from './routes/foodRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 // app config
 const app = express();
 const port = process.env.PORT || 4000;
-dotenv.config();
 
 // middleware
 app.use(express.json());
@@ -19,6 +19,7 @@ connectDB();
 // api endpoints
 app.use('/api/foods', foodRoutes);
 app.use('/images', express.static('uploads'));
+app.use('/api/users', userRoutes);
 
 
 app.listen(port, () => {
